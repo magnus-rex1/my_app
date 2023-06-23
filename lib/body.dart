@@ -5,15 +5,28 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        "Hi, lads!",
-        textScaleFactor: 4.0,
-      ),
-      // child: LinearProgressIndicator(
-      //   color: Colors.amber,
-      //   backgroundColor: Colors.deepPurple,
-      // ),
+    return ListView.builder(
+      itemCount: 25,
+      itemBuilder: (context, rowNumber) {
+        return Column(
+          children: [
+            Image.asset(
+              'assets/grip1.png',
+            ),
+            // Divider(
+            //   color: Colors.cyan,
+            //   thickness: 0.0,
+            // ),
+            Text(
+              'Row $rowNumber',
+              style: TextStyle(
+                  color: Colors.yellow,
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold),
+            )
+          ],
+        );
+      },
     );
   }
 }
